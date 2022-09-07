@@ -6,7 +6,9 @@ import UserDetails from './UserDetails'
 
 const StyledHeader = styled.div`
 
+  z-index: 1;
   height: 6vh;
+  width: 90vw;
   position: relative;
   display: flex;
   justify-content: center;

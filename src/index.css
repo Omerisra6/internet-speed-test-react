@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Georama:wght@500&display=swap');
 
 body {
-  background-color: var( --theme );
+  background: rgb(10,11,59);
+  background: radial-gradient(circle, rgba(10,11,59,1) 35%, rgba(1,2,51,1) 100%);
   margin: 0;
   font-family: georama;
+  overflow: hidden;
 }
 
 :root{
@@ -13,7 +15,8 @@ body {
   --lighter-theme: #4A5380;
   --white: #ffffff;
   --light-text-color: #DCDBDE;
-  --blue: #122460 !important;
+  --lighter-text-color: #EFF0F3;
+  --blue: #131746;
   --black: #000;
   --light-grey: #8A8AA4;
   --dark-grey: #706C82; 
@@ -32,7 +35,7 @@ body {
   --green: #2FC201;
   --bordeaux: #994446;
   --red: #FF4747;
-
+  --dark-blue: #1C1F4C;
   --primary-shadow: rgba(68,96,170,.2);
   --primary-weak-shadow: rgba(68,96,170,.07);
 
@@ -41,11 +44,12 @@ body {
   --padding-md: 2vh 3vw;
   --padding-lg: 2vh 6vw;
   
-  --font-size-xxs: 0.6vw;
+  --font-size-xxxs: 0.5vw;
+  --font-size-xxs: 0.8vw;
   --font-size-xs: 1.2vw;
   --font-size-sm: 1.5vw;
   --font-size-md: 2vw;
-  --font-size-lg: 3vw;
+  --font-size-lg: 2.5vw;
 
   --width-xxs: 0.8vw;
   --width-xs: 1vw;

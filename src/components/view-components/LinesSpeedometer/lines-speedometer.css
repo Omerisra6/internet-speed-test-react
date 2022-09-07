@@ -1,0 +1,83 @@
+
+.outside-speedometer-bar{
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    rotate: -90deg;
+}
+.short-speed-line, .long-speed-line{
+
+    background-color: var( --lighter-theme );
+}
+
+.long-speed-line-container{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.short-speed-line, .long-speed-line-container {
+
+    position: absolute;
+    transform: rotate( calc( var( --i ) * var( --rot ) ) ) translateY( -245px );
+}
+
+.long-speed-line-container > .speed-number{  
+    
+    font-size: 0.8rem;
+    color: var( --lighter-theme );
+    position: absolute;
+    rotate: calc( 90deg - ( var( --i ) * var( --rot ) ) ) ;
+    top: 30px;
+    font-weight: bold;
+}
+
+.marked{
+    
+    animation: glow-orange 0.04s linear forwards;
+    animation-delay: calc( var( --i ) * 0.05s );
+} 
+
+.marked-text
+{
+    animation: glow-white 0.04s linear forwards;
+    animation-delay: calc( var( --i ) * 0.05s );
+}
+
+.short-speed-line
+{
+    width: 1.5px;
+    height: 10px;
+}
+
+.long-speed-line
+{
+    width: 3px;
+    height: 20px;
+}
+
+@keyframes glow-orange {
+
+    0%{
+        background: var( --lighter-theme );
+        box-shadow: none;
+    }
+    100%{
+        background: var( --orange-theme );
+        box-shadow: 0 0 10px var( --orange-theme );
+    }
+}
+
+@keyframes glow-white {
+
+    0%{
+        color: var( --lighter-theme );
+    }
+    100%{
+        color: var( --white );
+    }
+}

@@ -1,5 +1,4 @@
 import Header from './components/Header';
-import { TestDetailsProvider } from './contexts/testDetails';
 import SpeedTestPage from './pages/speed-test/SpeedTestPage';
 
 function App() {
@@ -7,11 +6,9 @@ function App() {
     <div className="App">
 
       <Header/>
-      <TestDetailsProvider>
 
-        <SpeedTestPage/>
+      <SpeedTestPage/>
 
-      </TestDetailsProvider>
 
     </div>
   );

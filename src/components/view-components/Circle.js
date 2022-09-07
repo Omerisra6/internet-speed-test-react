@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 
-const sizesMap ={ 
+const sizesMap ={
     xxs: {
-        fontSize: '--font-size-xxs',
+        fontSize: '--font-size-xxxs',
         width: '--width-xxs',
         height: '--width-xxs'
     },
@@ -19,7 +19,7 @@ const sizesMap ={
         height: '--width-sm'
     },
     md: {
-        fontSize: '--font-size-md',
+        fontSize: '--font-size-sm',
         width: '--width-md',
         height: '--width-md'
     },
@@ -45,8 +45,8 @@ const colorsMap ={
         background: '--black',
     },
     theme: {
-        color: '--lighter-theme',
-        background: '--orange-theme',
+        color: '--orange-theme',
+        background: '--dark-blue',
     },
     red:{
         color: '--white',
@@ -64,7 +64,7 @@ export const Circle = styled.div`
     width: var( ${ ( { size } ) => sizesMap[ size ].width } );
     height: var( ${ ( { size } ) => sizesMap[ size ].height } );
     color: var( ${ ( { color } ) => colorsMap[ color ].color } );
-    font-size: var( ${ ( { size } ) => sizesMap[ size ].fontSize } );;
+    font-size: var( ${ ( { size } ) => sizesMap[ size ].fontSize } );
     background-color: var( ${ ( { color } ) => colorsMap[ color ].background } );;
     border-radius: 50%;
 `

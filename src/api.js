@@ -1,7 +1,6 @@
 const BASE_URL = process.env.BASE_URL
 
-const getData = ( async( url ) => {
+export async function getData( url = BASE_URL ) {
 
     return await fetch( url ).then( ( res ) =>{  return res.json() })
-    
-});
+} 
