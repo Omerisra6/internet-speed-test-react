@@ -23,7 +23,7 @@
 .short-speed-line, .long-speed-line-container {
 
     position: absolute;
-    transform: rotate( calc( var( --i ) * var( --rot ) ) ) translateY( -245px );
+    transform: rotate( calc( var( --i ) * var( --rot ) ) ) translateY( -220px );
 }
 
 .long-speed-line-container > .speed-number{  

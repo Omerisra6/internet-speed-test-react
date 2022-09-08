@@ -24,7 +24,7 @@
 }
 .inside-speedometer-bar {
 
-    width: 400px;
+    width: 350px;
     aspect-ratio: 2 / 1;
     position: relative;
     display: flex;

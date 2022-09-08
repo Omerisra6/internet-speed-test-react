@@ -13,7 +13,7 @@ const StyledSpeedDetails = styled.div`
     gap: 7vh;
     position: absolute;
     left: 50%;
-    top: 55%;
+    top: 53%;
     transform: translate( -50%, -50%);
 `
 export default function SpeedDetails() {

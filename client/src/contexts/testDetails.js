@@ -12,12 +12,7 @@ export const TestDetailsProvider = ( { children } ) => {
     const [ uploadSpeed, setUploadSpeed ] = useState( 20 );
     const [ downloadSpeed, setDownloadSpeed ] = useState( 17.7 );
     const [ ping, setPing ] = useState( 5 );
-    const [ clientDetails, setClientDetails ] = useState( { 
-        'os': 'Windows 10 64bit',
-        'provider': 'HOT',
-        'type': 'socks 5',
-        'ip': '70.8.11.201'
-    } );
+    const [ clientDetails, setClientDetails ] = useState( { } );
 
 
     const value = {
