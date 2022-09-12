@@ -12,22 +12,21 @@ const StyledClientDetails = styled.div`
 `
 
 const clientDetailsObject = {
-    ip: { icon: 'wifi', title: 'IP Address' },
-    type: { icon: 'linear_scale', title: 'Type' },
-    provider: { icon: 'language', title: 'Provider' },
+    userIp: { icon: 'wifi', title: 'IP Address' },
+    userLocation: { icon: 'pin_drop', title: 'Location' },
+    server: { icon: 'language', title: 'Server' },
     os: { icon: 'album',title: 'OS' },
 };
 
 export default function ClientDetails() {
 
-    const { clientDetails } = useTestDetails();
-
+    const testDetails = useTestDetails()
     return (
         <StyledClientDetails>
 
             { Object.keys( clientDetailsObject ).map( ( detailKey  ) => {
                 
-                return <ClientDetail key={ detailKey } icon={ clientDetailsObject[ detailKey ].icon } data={ clientDetails[ detailKey ] } title={ clientDetailsObject[ detailKey ].title }/>
+                return <ClientDetail key={ detailKey } icon={ clientDetailsObject[ detailKey ].icon } data={ testDetails[ detailKey ] } title={ clientDetailsObject[ detailKey ].title }/>
 
             })}
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useTestDetails } from '../../../contexts/testDetails'
 
 const StyledTestResults = styled.div`
 
@@ -51,19 +52,20 @@ const StyledTestResults = styled.div`
 `
 export default function TestResults() {
 
+    const { downloadSpeed, latency } = useTestDetails()
     return (
         <StyledTestResults className='test-results'>
 
             <div className='speed-result'>
                 <span className='material-icons speed-type-icon'>download</span>
-                <div className='speed-result-text'>90,5</div>    
+                <div className='speed-result-text'>{ downloadSpeed }</div>    
                 <div className='mbps-text'>mbps</div>
             </div>
 
             <div className='ping-result-container'>
 
-                <span className='ping-text'>Ping </span>
-                <span className='ping-result-text'>5 ms</span>
+                <span className='ping-text'>Latency</span>
+                <span className='ping-result-text'> { latency }</span>
             </div>
 
         </StyledTestResults>

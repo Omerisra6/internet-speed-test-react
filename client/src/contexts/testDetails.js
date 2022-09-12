@@ -9,21 +9,37 @@ export const useTestDetails = () => {
 
 export const TestDetailsProvider = ( { children } ) => {
     
-    const [ uploadSpeed, setUploadSpeed ] = useState( 20 );
-    const [ downloadSpeed, setDownloadSpeed ] = useState( 17.7 );
-    const [ ping, setPing ] = useState( 5 );
-    const [ clientDetails, setClientDetails ] = useState( { } );
+    const [ uploadSpeed, setUploadSpeed ] = useState( 0.0 );
+    const [ downloadSpeed, setDownloadSpeed ] = useState( 0.0 );
+    const [ latency, setLatency ] = useState( 0 );
+    const [ userIp, setUserIp ] = useState( '' );
+    const [ userLocation, setUserLocation ] = useState( '' )
+    const [ os, setOs ] = useState( '' )
+    const [ server, setServer ] = useState( '' )
 
+    const setTestDetails = ( testResult ) =>{
 
-    const value = {
+        setUploadSpeed( testResult.uploadSpeed )
+        setDownloadSpeed( testResult.downloadSpeed )
+        setLatency( testResult.latency )
+        setUserIp( testResult.userIp )
+        setUserLocation( testResult.userLocation )
+        setOs( testResult.os )
+        setServer( testResult.server )
+    }
+
+    const value = 
+    {
         uploadSpeed,
         setUploadSpeed,
         downloadSpeed,  
         setDownloadSpeed,
-        ping,
-        setPing,
-        clientDetails,
-        setClientDetails
+        latency,
+        userIp,
+        userLocation,
+        os,
+        server,
+        setTestDetails
     };
 
     return <TestDetailsContext.Provider children={ children } value={ value } />;

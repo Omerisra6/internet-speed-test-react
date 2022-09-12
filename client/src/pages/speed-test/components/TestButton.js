@@ -24,23 +24,23 @@ const StyledTestButton = styled( Circle )`
 
 `
 
-async function testSpeed( setDownloadSpeed, setUploadSpeed, setClientDetails ){
+async function testSpeed( setTestDetails, setLoading ){
 
-    const testResponse =  await getData( '' )
+    await getData( '' ).then( res => {
 
-    setUploadSpeed( testResponse.uploadSpeed )
-    setDownloadSpeed( testResponse.downloadSpeed )
-    setClientDetails( { 'os': testResponse.os, 'server': testResponse.server, 'ip': testResponse.ip } )
-    
+        setTestDetails( res )        
+        setLoading( false )
+    })
+
 }
 
 export default function TestButton() {
     
-    const { setDownloadSpeed, setUploadSpeed, setClientDetails } = useTestDetails()
+    const { setTestDetails } = useTestDetails()
 
     return (
 
-        <StyledTestButton size='sm' color='theme' onClick={ () => { testSpeed( setDownloadSpeed, setUploadSpeed, setClientDetails ) } }>
+        <StyledTestButton size='sm' color='theme' onClick={ () => { testSpeed( setTestDetails, setLoading ) } }>
 
             <span className='test-button-icon'>⟳</span>
 

@@ -15,7 +15,7 @@ const resultsCardsDetails =
 {
     downloadSpeed: { icon: 'cloud_download', text: 'Download', unit: 'mbps' },
     uploadSpeed: { icon: 'cloud_upload', text: 'Upload', unit: 'mbps' },
-    ping: { icon: 'monitor_heart', text: 'Ping', unit: 'ms' },
+    latency: { icon: 'monitor_heart', text: 'Latency', unit: 's' },
 }
 
 export default function ResultsCardsContainer() 
