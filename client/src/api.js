@@ -4,5 +4,7 @@ export async function getData( url ) {
 
     const fetchUrl = url ? API_URL + url : API_URL 
 
-    return await fetch( fetchUrl ).then( ( res ) =>{ return res.json() } )
+    return await fetch( fetchUrl ).then( ( res ) =>{ 
+        return res
+    } )
 } 

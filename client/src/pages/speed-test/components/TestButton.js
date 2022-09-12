@@ -30,6 +30,15 @@ async function testSpeed( setTestDetails, setLoading ){
 
         setTestDetails( res )        
         setLoading( false )
+        if( res.status != 200 )
+        {
+            return
+        }
+        
+        res.json().then( data => {
+
+            setTestDetails( data )        
+        })
     })
 
 }
