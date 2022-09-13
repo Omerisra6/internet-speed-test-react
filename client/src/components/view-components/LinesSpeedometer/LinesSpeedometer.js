@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import './lines-speedometer.css'
+import LongLine from "./LongLine"
+import ShortLine from "./ShortLine"
 
 function getSpeedometerLines( markedCount, linesCount, loading ) 
 {
@@ -8,19 +10,15 @@ function getSpeedometerLines( markedCount, linesCount, loading )
 
     for ( var i = 0; i < linesCount; i++ ) 
     {
-        if ( linesCount !== 0)
-        {
-            i % 6 === 0 
-            ?
-            lines.push( 
-                <div className='long-speed-line-container'  key={ i } style={ { '--rot': rot, '--i': i, '--lines-count': linesCount } }>
-                    <span className={ `long-speed-line ${ loading  ? 'loading' :  i <= markedCount && 'marked' }` }></span>
-                    <span className={ `speed-number ${ loading  ? 'loading-text' :  i <= markedCount && 'marked-text' }` } >{ ( Math.floor( ( i ) * 3.3334 )) }</span>
-                </div>
-            )
-            :
-            lines.push( <span className={ `short-speed-line ${ loading  ? 'loading' :  i <= markedCount && 'marked' }` } key={ i } style={ { '--rot': rot, '--i': i, '--lines-count': linesCount } }></span> )
-        }
+        i % 6 === 0 
+        ?
+        lines.push( 
+            <LongLine i={ i } rot={ rot } linesCount={ linesCount } markedCount={ markedCount } loading={ loading }/>
+        )
+        :
+        lines.push(  
+            <ShortLine i={ i } rot={ rot } linesCount={ linesCount } markedCount={ markedCount } loading={ loading }/>
+        )
     }
 
     return lines
