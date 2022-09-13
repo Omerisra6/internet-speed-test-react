@@ -4,7 +4,7 @@ import TestExtraDetail from './TestExtraDetail'
 
 const StyledTestExtraDetails = styled.div`
     position: relative;
-    top: 145px;
+    top: 21vh;
     z-index: 1;
     display: flex;
     gap: 10px;

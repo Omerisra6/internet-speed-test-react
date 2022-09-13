@@ -10,7 +10,7 @@ const StyledTestButton = styled( Circle )`
     cursor: pointer;
     padding: 0.5vw;
     position: relative;
-    top: 120px;
+    top: 18vh;
 
     &:hover{
 

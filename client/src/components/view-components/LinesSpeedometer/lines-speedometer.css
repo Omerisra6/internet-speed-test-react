@@ -29,11 +29,11 @@
 
 .long-speed-line-container > .speed-number{  
     
-    font-size: 0.8rem;
+    font-size: var( --font-size-xs );
     color: var( --lighter-theme );
     position: absolute;
     rotate: calc( 90deg - ( var( --i ) * var( --rot ) ) ) ;
-    top: 30px;
+    top: 2.2vw;
     font-weight: bold;
 }
 
@@ -58,14 +58,33 @@
 
 .short-speed-line
 {
-    width: 1.5px;
-    height: 10px;
+    width: 0.2vw;
+    height: 1vw;
 }
 
 .long-speed-line
 {
-    width: 3px;
-    height: 20px;
+    width: 0.4vw;
+    height: 1.5vw;
+}
+
+@media ( max-width: 1100px ) {
+
+    .short-speed-line, .long-speed-line-container {
+
+        position: absolute;
+        transform: rotate( calc( var( --i ) * var( --rot ) ) ) translateY( -200px );
+    }
+}
+
+
+@media ( min-height: 1100px ) {
+
+    .long-speed-line-container > .speed-number{  
+    
+        top: 10px;
+        
+    }
 }
 
 @keyframes glow-orange {
@@ -90,11 +109,6 @@
     5%{
         background: var( --orange-theme );
         box-shadow: 0 0 10px var( --orange-theme );
-    }
-
-    4%{
-        background: var( --lighter-theme );
-        box-shadow: none;
     }
 
     95%{

@@ -11,12 +11,12 @@ const StyledSpeedTestChart = styled.div`
     text-align: center;
     padding: 0 8vw;
     color: var( --lighter-text-color );
-    max-height: 410px;
+    /* min-height:600px; */
     
     & > .speed-test-text{
 
         position: relative;
-        bottom: 18vh;
+        bottom: 130px;
         z-index: 1;
         font-size: var( --font-size-lg );
         font-weight: bold;

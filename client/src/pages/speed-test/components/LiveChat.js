@@ -5,6 +5,7 @@ const StyledLiveChat = styled.div`
 
     display: flex;
     height: 12vh;
+    min-height: 65px;
     background-color: var( --black );
     justify-content: flex-start;
     font-size: 1.2vw;
