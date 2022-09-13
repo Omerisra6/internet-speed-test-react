@@ -7,10 +7,13 @@ const StyledNavigation = styled.div`
     justify-content: center;
 `
 
-const navButtons= [
-    { 'icon': 'speed', 'url':'/' }, { 'icon': 'pie_chart', 'url':'/stats' },
-    { 'icon': 'language', 'url':'/language' }, { 'icon': 'dns', 'url':'/dns' },
-    { 'icon': 'tune', 'url':'/tune' }
+const navButtons = 
+[
+    { 'icon': 'speed', 'url':'/', 'checked': true }, 
+    { 'icon': 'pie_chart', 'url':'/stats', 'checked': false },
+    { 'icon': 'language', 'url':'/language', 'checked': false }, 
+    { 'icon': 'dns', 'url':'/dns' },
+    { 'icon': 'tune', 'url':'/tune', 'checked': false }
 ];
 
 export default function Navigation() {
@@ -21,7 +24,7 @@ export default function Navigation() {
 
             { navButtons.map( ( navButton, index ) => {
 
-                return <Link index={ index } icon={ navButton.icon } url={ navButton.url } padding='md' size='sm' color='theme' />
+                return <Link index={ index } icon={ navButton.icon } url={ navButton.url } padding='md' size='sm' color={ navButton.checked ? 'orange': 'theme' } />
 
             })}
             

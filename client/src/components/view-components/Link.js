@@ -38,7 +38,11 @@ const colorsMap ={
     theme: {
         color: '--lighter-theme',
         backgroundHover: '--orange-theme',
-    }
+    },
+    orange: {
+        color: '--orange-theme',
+        backgroundHover: '--orange-theme',
+    },
     
 }
 
@@ -75,6 +79,7 @@ StyledLink.propTypes ={
         'light',
         'white',
         'theme',
+        'orange',
     ]),
 }
 
