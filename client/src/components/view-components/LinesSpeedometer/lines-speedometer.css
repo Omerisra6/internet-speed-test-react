@@ -33,7 +33,7 @@
     color: var( --lighter-theme );
     position: absolute;
     rotate: calc( 90deg - ( var( --i ) * var( --rot ) ) ) ;
-    top: 2.2vw;
+    top: 4vh;
     font-weight: bold;
 }
 
