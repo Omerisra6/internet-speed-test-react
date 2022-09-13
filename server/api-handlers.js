@@ -16,8 +16,12 @@ exports.testSpeedHandler = async() => {
         return testCommandOutput
     }
 
-    testCommandOutput.data        = JSON.parse( testCommandOutput.data )
-    testCommandOutput.data.server = os.hostname() 
-    testCommandOutput.data.os     = process.platform
-    return testCommandOutput
+    return {
+        ...testCommandOutput,
+        data: {
+            ...JSON.parse( testCommandOutput.data ),
+            server: os.hostname(),
+            os: process.platform,
+        }
+    }
 }
