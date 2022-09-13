@@ -16,13 +16,13 @@ const StyledSpeedTestChart = styled.div`
     & > .speed-test-text{
 
         position: relative;
-        bottom: 120px;
+        bottom: 18vh;
         z-index: 1;
         font-size: var( --font-size-lg );
         font-weight: bold;
     }
 `
-export default function SpeedTestChart() {
+export default function SpeedTestChart( { loading } ) {
 
     return (
         <StyledSpeedTestChart>
@@ -34,7 +34,7 @@ export default function SpeedTestChart() {
 
             </div>
 
-            <Speedometer/>
+            <Speedometer loading={ loading }/>
 
         </StyledSpeedTestChart>
     )

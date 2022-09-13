@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import SpeedTestChart from './SpeedTestChart'
 import TestButton from './TestButton'
@@ -18,14 +18,15 @@ const StyledSpeedDetails = styled.div`
 `
 export default function SpeedDetails() {
 
+    const [ loading, setLoading ] = useState( false )
     return (
         <StyledSpeedDetails>
 
-            <SpeedTestChart/>
+            <SpeedTestChart loading={ loading }/>
 
             <TestExtraDetails/>
             
-            <TestButton/>
+            <TestButton setLoading={ setLoading }/>
 
         </StyledSpeedDetails>
     )

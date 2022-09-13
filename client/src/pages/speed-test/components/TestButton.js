@@ -24,13 +24,14 @@ const StyledTestButton = styled( Circle )`
 
 `
 
-async function testSpeed( setTestDetails, setLoading ){
+function testSpeed( setTestDetails, setLoading ){
 
-    await getData( '' ).then( res => {
+    setLoading( true )
+    
+    getData( '' ).then( res => {
 
-        setTestDetails( res )        
         setLoading( false )
-        if( res.status != 200 )
+        if( res.status !== 200 )
         {
             return
         }
@@ -39,11 +40,13 @@ async function testSpeed( setTestDetails, setLoading ){
 
             setTestDetails( data )        
         })
-    })
+    })    
+    
+    
 
 }
 
-export default function TestButton() {
+export default function TestButton( { setLoading } ) {
     
     const { setTestDetails } = useTestDetails()
 

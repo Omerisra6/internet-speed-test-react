@@ -10,6 +10,7 @@ const StyledClientDetail = styled.div`
 
 const StyledLeftClientDetail = styled.div`
 
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -23,6 +24,8 @@ const StyledLeftClientDetail = styled.div`
 
 const StyledRightClientDetail = styled.div`
 
+    width: 80%;
+    height: 5vh;
     display: flex;
     flex-direction: column;
     gap: 0.5vh;
@@ -39,6 +42,7 @@ const StyledRightClientDetail = styled.div`
     }
 
 `
+
 export default function ClientDetail( { index, icon, data, title } ) {
 
     

@@ -15,6 +15,21 @@
     }
 }
 
+@keyframes progress-back-and-forwards{
+
+    0% {
+        --percentage: 0;
+    }
+
+    50%{
+        --percentage: 100;
+    }
+
+    100% {
+        --percentage: 0;
+    }
+}
+
 .speedometer{
 
     position: absolute;
@@ -22,16 +37,16 @@
     left: 50%;
     transform: translate( -50%, -50% );
 }
+
 .inside-speedometer-bar {
 
-    width: 350px;
+    width: 28vw;
     aspect-ratio: 2 / 1;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: progress 2s 0.5s forwards;
 }
 
 .inside-speedometer-bar::before {
@@ -48,6 +63,18 @@
     -webkit-mask: radial-gradient(at 50% 100%, #0000 68%, #000 0);
     -webkit-mask-mode: alpha;
     border-radius: 50% / 100% 100% 0 0;
+}
+
+.loading-animation{
+
+    --line-delay-ms: calc( var( --line-delay ) * 0.001s );
+    --circle-duration: calc( var( --line-delay-ms ) * var( --lines-count ) * 2 );
+    animation: progress-back-and-forwards var( --circle-duration ) linear infinite;
+}
+
+.forwards-animation{
+    
+    animation: progress 2s 0.05s forwards;
 }
 
 .speedometer-background{

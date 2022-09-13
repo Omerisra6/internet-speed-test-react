@@ -50,7 +50,7 @@ const StyledTestResults = styled.div`
 
 
 `
-export default function TestResults() {
+export default function TestResults( { loading } ) {
 
     const { downloadSpeed, latency } = useTestDetails()
     return (
@@ -58,7 +58,7 @@ export default function TestResults() {
 
             <div className='speed-result'>
                 <span className='material-icons speed-type-icon'>download</span>
-                <div className='speed-result-text'>{ downloadSpeed }</div>    
+                <div className='speed-result-text'>{ ! loading ? downloadSpeed : 'Testing...'}</div>    
                 <div className='mbps-text'>mbps</div>
             </div>
 
