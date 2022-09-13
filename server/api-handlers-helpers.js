@@ -1,9 +1,7 @@
 const { exec } = require('child_process');
-const { error } = require('console');
+class os_func{
 
-const os_func = function()
-{
-    this.execCommand = function( cmd )
+    execCommand( cmd )
     {
         return new Promise( ( resolve, reject ) => {
             exec( cmd, ( err, stdout, stderr ) => {   
@@ -26,7 +24,7 @@ const os_func = function()
     }
 }
 
-exports.getExecOutput =  async function( command ){
+exports.getExecOutput = async function( command ){
 
     let execOutput
     const osFunction = new os_func()
