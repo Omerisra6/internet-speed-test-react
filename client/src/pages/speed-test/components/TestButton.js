@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { Circle } from '../../../components/view-components/Circle'
 import { getData } from '../../../api.js'
@@ -12,20 +12,32 @@ const StyledTestButton = styled( Circle )`
     position: relative;
     top: 18vh;
 
+    & > button{
+        
+        border: none;
+        background-color: inherit;
+    }
+
+    & > button > .test-button-icon{
+        
+        color: var( --orange-theme );
+    }
     &:hover{
 
         background-color: var( --black );
     }
 
-    &:hover .test-button-icon{
+    &:hover button > .test-button-icon{
         
         color: var( --lighter-theme );
     }
 
+   
+
 `
 
 function testSpeed( setTestDetails, setLoading, setError )
-{
+{   
     setError( false )
     setLoading( true )
     
@@ -44,15 +56,19 @@ function testSpeed( setTestDetails, setLoading, setError )
     })    
 }
 
-export default function TestButton( { setLoading, setError } ) {
+export default function TestButton( { loading, setLoading, setError } ) {
     
     const { setTestDetails } = useTestDetails()
 
     return (
 
-        <StyledTestButton size='sm' color='theme' onClick={ () => { testSpeed( setTestDetails, setLoading, setError ) } }>
+        <StyledTestButton size='sm' color='theme'>
 
-            <span className='test-button-icon'>⟳</span>
+            <button disabled={ loading } onClick={ () => { testSpeed( setTestDetails, setLoading, setError ) } }>
+
+                <span className='test-button-icon'>⟳</span>
+
+            </button>
 
         </StyledTestButton>
     )

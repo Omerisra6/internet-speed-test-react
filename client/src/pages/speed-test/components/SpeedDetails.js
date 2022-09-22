@@ -33,7 +33,7 @@ export default function SpeedDetails() {
 
             <TestExtraDetails/>
 
-            <TestButton setLoading={ setLoading } setError={ setError }/>
+            <TestButton loading={ loading } setLoading={ setLoading } setError={ setError }/>
 
         </StyledSpeedDetails>
     )
