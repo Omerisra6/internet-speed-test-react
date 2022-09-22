@@ -14,7 +14,7 @@ const StyledHeader = styled.div`
   justify-content: center;
   align-items: center;
   margin: 4vh 5vw 0 5vw;
-
+  min-width: 800px;
 `
 export default function Header() {
 

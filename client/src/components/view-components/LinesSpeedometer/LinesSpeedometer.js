@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAppAttributes } from '../../../contexts/appAttributes'
 import './lines-speedometer.css'
 import LongLine from "./LongLine"
 import ShortLine from "./ShortLine"
@@ -24,8 +25,9 @@ function getSpeedometerLines( markedCount, linesCount, loading )
     return lines
 }
 
-export default function LinesSpeedometer( { linesCount, markedCount, loading }) {
+export default function LinesSpeedometer( { linesCount, markedCount }) {
 
+    const { loading } = useAppAttributes()
     const lines = getSpeedometerLines( markedCount, linesCount, loading )
 
     return (

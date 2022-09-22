@@ -27,19 +27,21 @@ export default function SpeedTestPage() {
     return (
         <StyledSpeedTestPage>
 
-            <TestDetailsProvider>
 
-                <StyledTestDetails>
+            <StyledTestDetails>
+
+                <TestDetailsProvider>
 
                     <ClientDetails/>
 
                     <SpeedDetails/>
 
                     <ResultsCardsContainer/>
+                    
+                </TestDetailsProvider>
 
-                </StyledTestDetails>`
+            </StyledTestDetails>`
 
-            </TestDetailsProvider>
             
         </StyledSpeedTestPage>
     )

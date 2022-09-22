@@ -24,8 +24,9 @@ const StyledTestButton = styled( Circle )`
 
 `
 
-function testSpeed( setTestDetails, setLoading ){
-
+function testSpeed( setTestDetails, setLoading, setError )
+{
+    setError( false )
     setLoading( true )
     
     getData( '' ).then( res => {
@@ -33,7 +34,7 @@ function testSpeed( setTestDetails, setLoading ){
         setLoading( false )
         if( res.status !== 200 )
         {
-            return
+            setError( true )
         }
         
         res.json().then( data => {
@@ -41,18 +42,15 @@ function testSpeed( setTestDetails, setLoading ){
             setTestDetails( data )        
         })
     })    
-    
-    
-
 }
 
-export default function TestButton( { setLoading } ) {
+export default function TestButton( { setLoading, setError } ) {
     
     const { setTestDetails } = useTestDetails()
 
     return (
 
-        <StyledTestButton size='sm' color='theme' onClick={ () => { testSpeed( setTestDetails, setLoading ) } }>
+        <StyledTestButton size='sm' color='theme' onClick={ () => { testSpeed( setTestDetails, setLoading, setError ) } }>
 
             <span className='test-button-icon'>⟳</span>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { AppAttributesProvider } from '../../../contexts/appAttributes'
 import SpeedTestChart from './SpeedTestChart'
 import TestButton from './TestButton'
 import TestExtraDetails from './TestExtraDetails'
@@ -19,14 +20,20 @@ const StyledSpeedDetails = styled.div`
 export default function SpeedDetails() {
 
     const [ loading, setLoading ] = useState( false )
+    const [ error, setError ]     = useState( false ) 
+
     return (
         <StyledSpeedDetails>
 
-            <SpeedTestChart loading={ loading }/>
+            <AppAttributesProvider value={ { loading, error } }>
+
+                <SpeedTestChart/>
+
+            </AppAttributesProvider>
 
             <TestExtraDetails/>
-            
-            <TestButton setLoading={ setLoading }/>
+
+            <TestButton setLoading={ setLoading } setError={ setError }/>
 
         </StyledSpeedDetails>
     )

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useAppAttributes } from '../../../contexts/appAttributes'
 import { useTestDetails } from '../../../contexts/testDetails'
 
 const StyledTestResults = styled.div`
@@ -50,7 +51,9 @@ const StyledTestResults = styled.div`
 
 
 `
-export default function TestResults( { loading } ) {
+export default function TestResults() {
+
+    const { loading, error } = useAppAttributes()
 
     const { downloadSpeed, latency } = useTestDetails()
     return (
@@ -58,7 +61,7 @@ export default function TestResults( { loading } ) {
 
             <div className='speed-result'>
                 <span className='material-icons speed-type-icon'>download</span>
-                <div className='speed-result-text'>{ ! loading ? downloadSpeed : 'Testing...'}</div>    
+                <div className='speed-result-text'>{ ! loading && ! error ? downloadSpeed : loading ? 'Testing...' : 'No connection' }</div>    
                 <div className='mbps-text'>mbps</div>
             </div>
 

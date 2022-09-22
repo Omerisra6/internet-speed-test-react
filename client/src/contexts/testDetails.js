@@ -31,9 +31,7 @@ export const TestDetailsProvider = ( { children } ) => {
     const value = 
     {
         uploadSpeed,
-        setUploadSpeed,
         downloadSpeed,  
-        setDownloadSpeed,
         latency,
         userIp,
         userLocation,

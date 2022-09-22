@@ -1,39 +1,29 @@
-import React, { useEffect, useRef  } from 'react'
+import React, { useRef  } from 'react'
 import LinesSpeedometer from '../../../../components/view-components/LinesSpeedometer/LinesSpeedometer'
+import { useAppAttributes } from '../../../../contexts/appAttributes'
 import { useTestDetails } from '../../../../contexts/testDetails'
 import TestResults from '../TestResults'
 import './speedometer.css'
 
-function toggleAnimation( speedometerElement, loading ) {
+export default function Speedometer( ) {
 
-    speedometerElement.classList.toggle( 'loading-animation', loading )
-    speedometerElement.classList.toggle( 'forwards-animation', ! loading )
-}
-
-export default function Speedometer( { loading } ) {
-
-    const { downloadSpeed } = useTestDetails()
-    const speedometerRef    = useRef( null )
-    const linesCount        = 49
-    const maxSpeed          = 160
-    const speedRatio        = downloadSpeed / maxSpeed
-    const speedPercentage   = speedRatio * 100
-    const markedCount       = ( speedRatio *  linesCount ) 
-
-    useEffect( () => {
-        
-        toggleAnimation( speedometerRef.current, loading )
-    }, [ loading ])
+    const { downloadSpeed }  = useTestDetails()
+    const { loading, error } = useAppAttributes()
+    const speedometerRef     = useRef( null )
+    const linesCount         = 49
+    const maxSpeed           = 160
+    const speedRatio         = downloadSpeed / maxSpeed
+    const speedPercentage    = ! error ? speedRatio * 100 : 0
+    const markedCount        = speedRatio * linesCount 
 
     return (
         <div className="speedometer">
 
-            <div className='inside-speedometer-bar forwards-animation' ref={ speedometerRef } style={ { '--value' : speedPercentage, '--lines-count': linesCount, '--line-delay': 20 } }>
+            <div className={ `inside-speedometer-bar ${ ! loading ? 'forwards-animation' : 'loading-animation' }` } ref={ speedometerRef } style={ { '--value' : speedPercentage, '--lines-count': linesCount, '--line-delay': 20 } }>
                 
-                <LinesSpeedometer linesCount={ linesCount } markedCount={ markedCount } loading={ loading }/>
-                
-                <TestResults loading={ loading }/>
-                
+                <LinesSpeedometer linesCount={ linesCount } markedCount={ markedCount }/>
+                <TestResults/>
+
             </div>
 
             <div className='speedometer-background'></div>
