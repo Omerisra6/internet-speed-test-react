@@ -24,7 +24,7 @@ export default function TestExtraDetail( { detailKey, name, value } ) {
         <StyledExtraDetail>
 
             <span className='extra-detail-name'>{ name }</span>
-            <span className='extra-detail-value' data-testid={ detailKey }>{ value }</span>
+            <span className='extra-detail-value' data-testid={ detailKey }>{ ! value ? '?' : value }</span>
 
         </StyledExtraDetail>
     )

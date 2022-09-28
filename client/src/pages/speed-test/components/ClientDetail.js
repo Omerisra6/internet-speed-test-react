@@ -56,7 +56,7 @@ export default function ClientDetail( { detailKey, icon, data, title } ) {
 
             <StyledRightClientDetail className='right-client-detail'>
 
-                <span className='client-detail-data' data-testid={ detailKey }>{ data }</span>
+                <span className='client-detail-data' data-testid={ detailKey }>{ ! data ? '?' : data }</span>
                 <span className='client-detail-title'>{ title }</span>
 
             </StyledRightClientDetail>
