@@ -12,8 +12,8 @@ export default function Speedometer( ) {
     const speedometerRef     = useRef( null )
     const linesCount         = 49
     const maxSpeed           = 160
-    const speedRatio         = downloadSpeed / maxSpeed
-    const speedPercentage    = ! error ? speedRatio * 100 : 0
+    const speedRatio         = ! error ? downloadSpeed / maxSpeed : 0
+    const speedPercentage    = speedRatio * 100 
     const markedCount        = speedRatio * linesCount 
 
     return (
