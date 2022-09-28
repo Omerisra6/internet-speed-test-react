@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Circle } from '../../../components/view-components/Circle'
+import { Button } from '../../../components/view-components/Button'
 import { getData } from '../../../api.js'
 import { useTestDetails } from '../../../contexts/testDetails'
 
-const StyledTestButton = styled( Circle )`
+const StyledTestButton = styled( Button )`
 
     z-index: 1;
     cursor: pointer;
@@ -12,15 +12,10 @@ const StyledTestButton = styled( Circle )`
     position: relative;
     top: 18vh;
 
-    & > button{
-
-        border: none;
-        background-color: inherit;
-    }
-
-    & > button > .test-button-icon{
+    & > .test-button-icon{
         
         color: var( --orange-theme );
+        font-size: var( --font-size-sm );
     }
 
     &:hover{
@@ -28,7 +23,7 @@ const StyledTestButton = styled( Circle )`
         background-color: var( --black );
     }
 
-    &:hover button > .test-button-icon{
+    &:hover > .test-button-icon{
         
         color: var( --lighter-theme );
     }
@@ -42,7 +37,6 @@ async function testSpeed( setTestDetails, setLoading, setError )
     setError( false )
     setLoading( true )
     
-
     await getData( '' ).then( res => {
 
         setTestDetails( res.data )        
@@ -51,9 +45,7 @@ async function testSpeed( setTestDetails, setLoading, setError )
         setError( true )
     })  
 
-    
     setLoading( false )
-
 }
 
 export default function TestButton( { loading, setLoading, setError } ) {
@@ -62,13 +54,9 @@ export default function TestButton( { loading, setLoading, setError } ) {
 
     return (
 
-        <StyledTestButton size='sm' color='theme'>
+        <StyledTestButton size='sm' color='theme' circle={ true } data-testid='test-button' disabled={ loading } onClick={ () => { testSpeed( setTestDetails, setLoading, setError ) } }>
 
-            <button  data-testid='test-button' disabled={ loading } onClick={ () => { testSpeed( setTestDetails, setLoading, setError ) } }>
-
-                <span className='test-button-icon'>⟳</span>
-
-            </button>
+            <span className='test-button-icon material-icons'>replay</span>
 
         </StyledTestButton>
     )
