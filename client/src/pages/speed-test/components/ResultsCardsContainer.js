@@ -27,7 +27,7 @@ export default function ResultsCardsContainer()
             { Object.keys( resultsCardsDetails ).map( ( cardKey ) =>{
 
                 const currentCard = resultsCardsDetails[ cardKey ]
-                return <ResultCard icon={ currentCard.icon } text={ currentCard.text } unit={ currentCard.unit }  data={ testDetails[ cardKey ] }/>
+                return <ResultCard key={ cardKey } dataKey={ cardKey } icon={ currentCard.icon } text={ currentCard.text } unit={ currentCard.unit }  data={ testDetails[ cardKey ] }/>
             }) }
         </StyledResultsCardsContainer>
     )

@@ -47,7 +47,7 @@ const StyledResultCard = styled.div`
     }
 
 `
-export default function ResultCard( { icon, text, unit, data }) {
+export default function ResultCard( { dataKey, icon, text, unit, data }) {
 
     return (
         <StyledResultCard>
@@ -59,7 +59,7 @@ export default function ResultCard( { icon, text, unit, data }) {
 
             </div>
 
-            <div className='result-card-data'>{ data }</div>
+            <div className='result-card-data' data-testid={ dataKey }>{ data }</div>
 
             <div className='result-card-unit'>{ unit }</div>
 

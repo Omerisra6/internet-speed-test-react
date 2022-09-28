@@ -26,7 +26,7 @@ export default function ClientDetails() {
 
             { Object.keys( clientDetailsObject ).map( ( detailKey  ) => {
                 
-                return <ClientDetail key={ detailKey } icon={ clientDetailsObject[ detailKey ].icon } data={ testDetails[ detailKey ] } title={ clientDetailsObject[ detailKey ].title }/>
+                return <ClientDetail key={ detailKey } detailKey={ detailKey } icon={ clientDetailsObject[ detailKey ].icon } data={ testDetails[ detailKey ] } title={ clientDetailsObject[ detailKey ].title }/>
 
             })}
 

@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import { TestDetailsProvider } from '../../contexts/testDetails'
 import ResultsCardsContainer from './components/ResultsCardsContainer'
 import ClientDetails from './components/ClientDetails'
-import SpeedDetails from './components/SpeedDetails'
+import SpeedDetails from './components/SpeedDetails/SpeedDetails'
 
 const StyledSpeedTestPage = styled.div`
+
     width: 100vw;
     height: 90vh;
     min-height: 390px;

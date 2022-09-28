@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useAppAttributes } from '../../../contexts/appAttributes'
-import { useTestDetails } from '../../../contexts/testDetails'
+import { useAppAttributes } from '../../../../contexts/appAttributes'
+import { useTestDetails } from '../../../../contexts/testDetails'
 
 const StyledTestResults = styled.div`
 
@@ -54,21 +54,21 @@ const StyledTestResults = styled.div`
 export default function TestResults() {
 
     const { loading, error } = useAppAttributes()
-
     const { downloadSpeed, latency } = useTestDetails()
+    
     return (
         <StyledTestResults className='test-results'>
 
             <div className='speed-result'>
                 <span className='material-icons speed-type-icon'>download</span>
-                <div className='speed-result-text'>{ ! loading && ! error ? downloadSpeed : loading ? 'Testing...' : 'No connection' }</div>    
+                <div className='speed-result-text' data-testid='downloadSpeed' >{ ! loading && ! error ? downloadSpeed : loading ? 'Testing...' : 'No connection' }</div>    
                 <div className='mbps-text'>mbps</div>
             </div>
 
             <div className='ping-result-container'>
 
                 <span className='ping-text'>Latency</span>
-                <span className='ping-result-text'> { latency }</span>
+                <span className='ping-result-text' data-testid='latency'>{ latency }</span>
             </div>
 
         </StyledTestResults>

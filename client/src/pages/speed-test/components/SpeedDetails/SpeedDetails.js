@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { AppAttributesProvider } from '../../../contexts/appAttributes'
-import SpeedTestChart from './SpeedTestChart'
-import TestButton from './TestButton'
-import TestExtraDetails from './TestExtraDetails'
+import { AppAttributesProvider } from '../../../../contexts/appAttributes'
+import SpeedTestChart from '../SpeedTestChart'
+import TestButton from '../TestButton'
+import TestExtraDetails from '../TestExtraDetails'
 
 const StyledSpeedDetails = styled.div`
 

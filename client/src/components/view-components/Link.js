@@ -83,11 +83,11 @@ StyledLink.propTypes ={
     ]),
 }
 
-export default function Link( { index, icon, size, color, url } ) {
+export default function Link( { icon, size, color, url } ) {
 
 
     return (
-        <StyledLink key={ index } href={ url } size={ size } color={ color } >
+        <StyledLink href={ url } size={ size } color={ color } >
 
             <span className='material-icons link-icon'>{ icon }</span>
 

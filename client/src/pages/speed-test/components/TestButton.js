@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Circle } from '../../../components/view-components/Circle'
 import { getData } from '../../../api.js'
@@ -13,7 +13,7 @@ const StyledTestButton = styled( Circle )`
     top: 18vh;
 
     & > button{
-        
+
         border: none;
         background-color: inherit;
     }
@@ -22,6 +22,7 @@ const StyledTestButton = styled( Circle )`
         
         color: var( --orange-theme );
     }
+
     &:hover{
 
         background-color: var( --black );
@@ -36,24 +37,23 @@ const StyledTestButton = styled( Circle )`
 
 `
 
-function testSpeed( setTestDetails, setLoading, setError )
+async function testSpeed( setTestDetails, setLoading, setError )
 {   
     setError( false )
     setLoading( true )
     
-    getData( '' ).then( res => {
 
-        setLoading( false )
-        if( res.status !== 200 )
-        {
-            setError( true )
-        }
-        
-        res.json().then( data => {
+    await getData( '' ).then( res => {
 
-            setTestDetails( data )        
-        })
-    })    
+        setTestDetails( res.data )        
+    }).catch( function( error ){
+
+        setError( true )
+    })  
+
+    
+    setLoading( false )
+
 }
 
 export default function TestButton( { loading, setLoading, setError } ) {
@@ -64,7 +64,7 @@ export default function TestButton( { loading, setLoading, setError } ) {
 
         <StyledTestButton size='sm' color='theme'>
 
-            <button disabled={ loading } onClick={ () => { testSpeed( setTestDetails, setLoading, setError ) } }>
+            <button  data-testid='test-button' disabled={ loading } onClick={ () => { testSpeed( setTestDetails, setLoading, setError ) } }>
 
                 <span className='test-button-icon'>⟳</span>
 
@@ -73,3 +73,4 @@ export default function TestButton( { loading, setLoading, setError } ) {
         </StyledTestButton>
     )
 }
+

@@ -26,7 +26,7 @@ export default function TestExtraDetails() {
             { Object.keys( extraDetails ).map( ( detailKey ) => {
 
                 const currentDetail = extraDetails[ detailKey ]
-                return <TestExtraDetail key={ detailKey } name={ currentDetail.name } value={ testDetails[ detailKey ] }/>
+                return <TestExtraDetail key={ detailKey } detailKey={ detailKey } name={ currentDetail.name } value={ testDetails[ detailKey ] }/>
             })}
 
         </StyledTestExtraDetails>

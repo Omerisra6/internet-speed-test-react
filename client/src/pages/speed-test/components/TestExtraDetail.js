@@ -18,13 +18,13 @@ const StyledExtraDetail = styled.div`
         color: var( --light-text-color );
     }
 `
-export default function TestExtraDetail( { name, value } ) {
+export default function TestExtraDetail( { detailKey, name, value } ) {
     
     return (
         <StyledExtraDetail>
 
             <span className='extra-detail-name'>{ name }</span>
-            <span className='extra-detail-value'>{ value }</span>
+            <span className='extra-detail-value' data-testid={ detailKey }>{ value }</span>
 
         </StyledExtraDetail>
     )

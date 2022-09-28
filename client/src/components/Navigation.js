@@ -24,7 +24,7 @@ export default function Navigation() {
 
             { navButtons.map( ( navButton, index ) => {
 
-                return <Link index={ index } icon={ navButton.icon } url={ navButton.url } padding='md' size='sm' color={ navButton.checked ? 'orange': 'theme' } />
+                return <Link key={ index } index={ index } icon={ navButton.icon } url={ navButton.url } padding='md' size='sm' color={ navButton.checked ? 'orange': 'theme' } />
 
             })}
             

@@ -2,7 +2,7 @@ import React, { useRef  } from 'react'
 import LinesSpeedometer from '../../../../components/view-components/LinesSpeedometer/LinesSpeedometer'
 import { useAppAttributes } from '../../../../contexts/appAttributes'
 import { useTestDetails } from '../../../../contexts/testDetails'
-import TestResults from '../TestResults'
+import TestResults from '../TestResults/TestResults'
 import './speedometer.css'
 
 export default function Speedometer( ) {
@@ -19,10 +19,10 @@ export default function Speedometer( ) {
     return (
         <div className="speedometer">
 
-            <div className={ `inside-speedometer-bar ${ ! loading ? 'forwards-animation' : 'loading-animation' }` } ref={ speedometerRef } style={ { '--value' : speedPercentage, '--lines-count': linesCount, '--line-delay': 20 } }>
+            <div className={ `inside-speedometer-bar ${ ! loading ? 'forwards-animation' : 'loading-animation' }` } data-testid='inside-speedometer-bar' ref={ speedometerRef } style={ { '--value' : speedPercentage, '--lines-count': linesCount, '--line-delay': 20 } }>
                 
-                <LinesSpeedometer linesCount={ linesCount } markedCount={ markedCount }/>
-                <TestResults/>
+                <LinesSpeedometer key='outside-speedometer-bar' linesCount={ linesCount } markedCount={ markedCount }/>
+                <TestResults key='test-results'/>
 
             </div>
 

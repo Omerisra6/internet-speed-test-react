@@ -43,11 +43,10 @@ const StyledRightClientDetail = styled.div`
 
 `
 
-export default function ClientDetail( { index, icon, data, title } ) {
+export default function ClientDetail( { detailKey, icon, data, title } ) {
 
-    
     return (
-        <StyledClientDetail key={ index }>
+        <StyledClientDetail>
 
             <StyledLeftClientDetail className='left-client-detail'>
                 
@@ -57,7 +56,7 @@ export default function ClientDetail( { index, icon, data, title } ) {
 
             <StyledRightClientDetail className='right-client-detail'>
 
-                <span className='client-detail-data'>{ data }</span>
+                <span className='client-detail-data' data-testid={ detailKey }>{ data }</span>
                 <span className='client-detail-title'>{ title }</span>
 
             </StyledRightClientDetail>

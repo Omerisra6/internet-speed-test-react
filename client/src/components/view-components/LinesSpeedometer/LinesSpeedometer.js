@@ -14,11 +14,11 @@ function getSpeedometerLines( markedCount, linesCount, loading )
         i % 6 === 0 
         ?
         lines.push( 
-            <LongLine i={ i } rot={ rot } linesCount={ linesCount } markedCount={ markedCount } loading={ loading }/>
+            <LongLine key={ i } i={ i } rot={ rot } linesCount={ linesCount } markedCount={ markedCount } loading={ loading }/>
         )
         :
         lines.push(  
-            <ShortLine i={ i } rot={ rot } linesCount={ linesCount } markedCount={ markedCount } loading={ loading }/>
+            <ShortLine key={ i } i={ i } rot={ rot } linesCount={ linesCount } markedCount={ markedCount } loading={ loading }/>
         )
     }
 
