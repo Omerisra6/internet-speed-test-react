@@ -32,8 +32,10 @@ const StyledTestResults = styled.div`
     }
 
     & > .ping-result-container{
-        
+
+        display: flex;
         padding-top: 10px;
+        gap: 0.5vw;
     }
 
     & > .ping-result-container > .ping-text{
