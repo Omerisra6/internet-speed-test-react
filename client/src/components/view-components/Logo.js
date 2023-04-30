@@ -16,12 +16,10 @@ const sizeMap = {
 
 const StyledLogo = styled.div`
 
-    --size-sm: '0.8vw';
-    --size-md: '1vw';
-    --size-lg: '1.2vw';
+    --size-sm: 0.8vw;
+    --size-md: 1vw;
+    --size-lg: 1.2vw;
 
-    position: absolute;
-    left: 0;
     display: flex;
     flex-direction: column;
     background-color: var( --theme );
@@ -37,7 +35,6 @@ const StyledLogo = styled.div`
 
         color: var( --orange-theme );
     }
-
 `
 
 StyledLogo.propTypes ={
@@ -52,7 +49,7 @@ export default function Logo( { size } ) {
 
 
     return(
-        <StyledLogo size={ size }>
+        <StyledLogo className='app-logo' size={ size }>
 
             <span className='logo-pro-text'>PRO</span>
             <span className='logo-earth-text'>EARTH</span>
