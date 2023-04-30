@@ -5,6 +5,13 @@ const StyledNavigation = styled.div`
 
     display: flex;
     justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate( -50%);
+
+    & > *{
+        padding: 0 3vw;
+    }
 `
 
 const navButtons = 
@@ -29,6 +36,5 @@ export default function Navigation() {
             })}
             
         </StyledNavigation>
-
     )
 }

@@ -4,7 +4,7 @@ import ClientDetail from './ClientDetail'
 import LiveChat from './LiveChat'
 
 const StyledClientDetails = styled.div`
-
+    z-index: 1;
     width: 18%;
     display: flex;  
     flex-direction: column;

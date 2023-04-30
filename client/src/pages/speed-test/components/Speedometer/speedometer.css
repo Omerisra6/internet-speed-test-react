@@ -125,3 +125,31 @@
     border: 2px solid #0c0c41;
 }
 
+@media ( max-width: 640px ){
+
+    .speedometer-background{
+
+        width: 275px;
+        height: 275px;
+    }
+    
+    .speedometer-background::after{
+    
+        width: 140px;
+        height: 140px;
+    }
+    
+    .speedometer-background::before{
+
+        width: 210px;
+        height: 210px;
+    }
+
+    .inside-speedometer-bar{
+        width: 0;
+        min-width: 0;
+    }
+
+    
+}
+

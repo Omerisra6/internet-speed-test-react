@@ -28,6 +28,11 @@ const StyledTestButton = styled( Button )`
         color: var( --lighter-theme );
     }
 
+    @media ( max-width: 640px ) {
+        top: 7vh;
+        padding: 2vh;
+    }
+
    
 
 `

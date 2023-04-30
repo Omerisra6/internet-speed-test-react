@@ -6,7 +6,6 @@ import TestButton from '../TestButton'
 import TestExtraDetails from '../TestExtraDetails'
 
 const StyledSpeedDetails = styled.div`
-
     width: 60%;
     display: flex;
     flex-direction: column;

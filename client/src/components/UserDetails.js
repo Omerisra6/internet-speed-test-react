@@ -4,24 +4,30 @@ import { Circle } from './view-components/Circle'
 import Link from './view-components/Link'
 
 const StyledUserDetails = styled.div`
-
-    position: absolute;
-    right: 0;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2vw;
 
-    & > .user-logo{
-        padding: 1vh 0.8vw;
+    & > *{
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    & > .user-logo-container > img{
+        border-radius: 50%;
         width: 2vw;
         height: 2vw;
-        border-radius: 50%;
     }
 
 
-    & > .chat-container{
-        display: flex;
-        justify-content: flex-start;
+    & > .chat-container > .chat-circle{
+        position: absolute;
+        top: 1vh;
+        right: 1vw;
     }
 
 `
@@ -31,12 +37,15 @@ export default function UserDetails() {
         <StyledUserDetails>
             
             <div className='chat-container' key='chat-container'>
-                <Circle color='red' size='xxs'>1</Circle>
+                <Circle color='red' size='xxs' className='chat-count'>1</Circle>
                 <Link icon={'chat_bubble_outline'} url='/chat' size='xs' color='light'/>
             </div>
             
             <Link className='user-notifications' key='user-notifications' icon={'notifications_none'} url='/chat' size='xs' color='theme'/>
-            <img className='user-logo' key='user-logo' src='/assets/n-1.png'/>
+            <div className='user-logo-container'>
+                <img className='user-logo' key='user-logo' src='/assets/n-1.png'/>
+            </div>
+            
 
         </StyledUserDetails>
     )

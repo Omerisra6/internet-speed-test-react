@@ -8,20 +8,28 @@ const StyledHeader = styled.div`
 
   z-index: 1;
   height: 6vh;
-  width: 90vw;
+  width: 94vw;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 4vh 5vw 0 5vw;
-  min-width: 800px;
+  padding: 2vh 3vw;
+
+  @media ( max-width: 640px ){
+
+    & > .app-logo{
+      
+      font-size: 0.7rem;
+    }
+  }
+
 `
 export default function Header() {
 
   return (
     <StyledHeader className='header-container'>
 
-      <Logo size="sm"></Logo>
+      <Logo size="md"></Logo>
 
       <Navigation/>
 

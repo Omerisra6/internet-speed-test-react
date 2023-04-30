@@ -4,19 +4,15 @@ import PropTypes from 'prop-types'
 
 const sizesMap ={ 
     xs: {
-        padding: '--padding-xs',
         fontSize: '--font-size-sm',
     },
     sm: {
-        padding: '--padding-md',
         fontSize: '--font-size-sm',
     },
     md: {
-        padding: '--padding-md',
         fontSize: '--font-size-md',
     },
     lg: {
-        padding: '--padding-lg',
         fontSize: '--font-size-lg',
     },
 }
@@ -50,7 +46,6 @@ const colorsMap ={
 const StyledLink = styled.a`
     
     background-color: inherit;
-    padding: var( ${ ( { size } ) => sizesMap[ size ].padding } );
 
     & > .link-icon{
 

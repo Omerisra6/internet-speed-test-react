@@ -8,6 +8,10 @@ const StyledTestExtraDetails = styled.div`
     z-index: 1;
     display: flex;
     gap: 10px;
+
+    @media ( max-width: 640px ) {
+        top: 11vh;
+    }
 `
 
 const extraDetails = {

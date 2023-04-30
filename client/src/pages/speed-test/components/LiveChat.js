@@ -8,16 +8,20 @@ const StyledLiveChat = styled.div`
     min-height: 65px;
     background-color: var( --black );
     justify-content: flex-start;
-    font-size: 1.2vw;
+    align-items: center;
     color: var( --light-text-color );
     padding: 3vh 1vw 3vh 1vw;
     margin-top: 5vh;
     font-weight: bold;
     border-radius:  8px;
+    font-size: var( --font-size-xs );
 
-    & > div > *{
-        
-        font-size: var( --font-size-xs );
+    & > .live-chat-text-container{
+
+        display: flex;
+        justify-self: center;
+        flex-direction: column;
+        height: 70%;
     }
 
     & > div > .help-you-text{
@@ -28,12 +32,12 @@ const StyledLiveChat = styled.div`
     & > div > .live-chat-text{
 
         cursor: pointer;
-        margin-top: 4vh;
         color: var( --orange-theme );
     }
 
 
     & > div > .live-chat-text:hover{
+
         font-size: var( --font-size-sm );
     }
 
@@ -41,6 +45,25 @@ const StyledLiveChat = styled.div`
 
         font-size: var( --font-size-lg );
         margin: auto;
+    }
+
+    @media ( max-width: 640px ){
+
+        height: 8vh;
+        min-height: 0;    
+        width: 20vw;
+        
+        padding: 2vw 4vw;
+
+        & > div > *{
+        
+            font-size: var( --font-size-sm );
+        }
+
+        & > div > .live-chat-text:hover{
+
+            font-size: var( --font-size-md );
+        }   
     }
 `
 export default function LiveChat() {

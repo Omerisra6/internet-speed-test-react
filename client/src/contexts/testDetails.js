@@ -9,13 +9,13 @@ export const useTestDetails = () => {
 
 export const TestDetailsProvider = ( { children } ) => {
     
-    const [ uploadSpeed, setUploadSpeed ] = useState( 0.0 );
+    const [ uploadSpeed, setUploadSpeed ]     = useState( 0.0 );
     const [ downloadSpeed, setDownloadSpeed ] = useState( 0.0 );
-    const [ latency, setLatency ] = useState( 0 );
-    const [ userIp, setUserIp ] = useState( '' );
-    const [ userLocation, setUserLocation ] = useState( '' )
-    const [ os, setOs ] = useState( '' )
-    const [ server, setServer ] = useState( '' )
+    const [ latency, setLatency ]             = useState( 0 );
+    const [ userIp, setUserIp ]               = useState( '' );
+    const [ userLocation, setUserLocation ]   = useState( '' )
+    const [ os, setOs ]                       = useState( '' )
+    const [ server, setServer ]               = useState( '' )
 
     const setTestDetails = ( testResult ) =>{
 
