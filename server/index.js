@@ -1,7 +1,7 @@
 const cors = require('cors')
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 8000
+const PORT = process.env.SERVER_PORT || 8000
 const { testSpeedHandler } = require( './api-handlers' )
 
 require('dotenv').config();
