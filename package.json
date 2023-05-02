@@ -4,15 +4,16 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && node index.js",
+    "start": "cd server && npm start",
+    "server": "cd server && npm run dev",
     "client": "cd client && npm start",
-    "install:client": "cd client && npm install --legacy-peer-deps",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install:client": "cd client && npm install",
     "install:server": "cd server && npm install",
-    "install:all": "npm run install:client && npm run install:server",
-    "build:client": "npm run install:client && cd client && npm run build",
-    "build:server": "npm run install:server",
-    "build": "npm install && npm run build:client && npm run build:server"
+    "install:all": "npm install && npm run install:client && npm run install:server",
+    "build:client": "npm run install:client && cd client && npm run build && mkdir -p ../server/public && cp -r build/* ../server/public",
+    "build:server": "npm run install:server",  
+    "build": "npm run build:client && npm run build:server"
   },
   "author": "",
   "license": "ISC",
