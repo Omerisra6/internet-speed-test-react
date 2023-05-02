@@ -1,70 +1,84 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  <br>
+  <a href="https://omerisra6-speed-test.onrender.com"><img src="https://cdn-icons-png.flaticon.com/512/10321/10321953.png" alt="Speed Test App" width="200"></a>
+  <br>
+  <a href="https://omerisra6-speed-test.onrender.com">Speed Test App</a>
+  <br>
+</h1>
 
-## Available Scripts
+<h4 align="center">A single page internet speed test app built with<a href="https://react.dev/" target="_blank"> React</a> and <a href="https://nodejs.org/" target="_blank">Node.js</a>.</h4>
+<p align="center"></p>
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#license">License</a>
+</p>
+<h2 align="center">
+  Screenshots
+  <br>
+  <br>
+  <a href="https://omerisra6-speed-test.onrender.com"><img src="https://i.ibb.co/BsVkXMK/localhost-3000.png" alt="localhost-3000" border="0"></a>
+  <br>
+  <a href="https://omerisra6-speed-test.onrender.com"><img src="https://i.postimg.cc/x1mTJ7ww/localhost-3000-1.png" alt="localhost-3000-1" border="0" height="400"></a>
+</h2>
 
-In the project directory, you can run:
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Responsive design 
+  - The app is optimized for desktop and mobile devices, ensuring a smooth experience for all users.
+* User Details
+  - Displays the user's IP address, location, server, and operating system.
+* Internet Speed Test
+  - Measures the user's upload and download speeds, as well as latency, for accurate results.
+* Testing and Debugging
+  - Includes tests to ensure the app works as expected.
+* Error handling
+  - The app includes error handling features to ensure that users are informed of any issues that arise.
+* User-friendly interface
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How To Use
 
-### `npm test`
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Clone this repository
+$ git clone https://github.com/Omerisra6/internet-speed-test-react
 
-### `npm run build`
+# Install Dependencies
+$ npm run install:all
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create an .env file in the root of your project.
+<br>
+To add a new environment variable for your API url, set the variable name as REACT_APP_API_URL and assign it to the server API url ( the deafult port is 8000).
+<br>
+```bash
+REACT_APP_API_URL=SERVER_URL
+```
+Run the following command:
+```bash
+# Run the app
+$ npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Credits
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This software uses the following open source packages:
 
-### `npm run eject`
+- [React](https://react.dev/)
+- [Node.js](https://nodejs.org/)
+- [Network Speed](https://www.npmjs.com/package/network-speed)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+MIT
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+> GitHub [@omerisra6](https://github.com/Omerisra6) &nbsp;&middot;&nbsp;
+> Linkedin [@omerisraeli](https://www.linkedin.com/in/omer-israeli6/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
