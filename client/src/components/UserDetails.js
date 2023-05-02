@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Circle } from './view-components/Circle'
 import Link from './view-components/Link'
+import logo from '../images/N-1.png'
 
 const StyledUserDetails = styled.div`
     position: relative;
@@ -43,7 +44,7 @@ export default function UserDetails() {
             
             <Link className='user-notifications' key='user-notifications' icon={'notifications_none'} url='/chat' size='xs' color='theme'/>
             <div className='user-logo-container'>
-                <img className='user-logo' key='user-logo' src='/assets/n-1.png'/>
+                <img className='user-logo' key='user-logo' src={ logo }/>
             </div>
             
 
