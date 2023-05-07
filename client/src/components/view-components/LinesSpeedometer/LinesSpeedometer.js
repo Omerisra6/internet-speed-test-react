@@ -1,12 +1,12 @@
 import React from 'react'
-import { useAppAttributes } from '../../../contexts/appAttributes'
-import './lines-speedometer.css'
+import { useAppAttributes } from '../../../contexts/appAttributesContext'
 import LongLine from "./LongLine"
 import ShortLine from "./ShortLine"
+import { StyledLinesSpeedometer } from './StyledLinesSpeedometer'
 
 function getSpeedometerLines( markedCount, linesCount, loading ) 
 {
-    const rot = `${ 184/linesCount }deg`
+    const rot   = `${ 184/linesCount }deg`
     const lines = []
 
     for ( var i = 0; i < linesCount; i++ ) 
@@ -28,14 +28,14 @@ function getSpeedometerLines( markedCount, linesCount, loading )
 export default function LinesSpeedometer( { linesCount, markedCount }) {
 
     const { loading } = useAppAttributes()
-    const lines = getSpeedometerLines( markedCount, linesCount, loading )
+    const lines       = getSpeedometerLines( markedCount, linesCount, loading )
 
     return (
 
-        <div className='outside-speedometer-bar'>
+        <StyledLinesSpeedometer className='outside-speedometer-bar'>
 
             { lines }
 
-        </div>
+        </StyledLinesSpeedometer>
     )
 }

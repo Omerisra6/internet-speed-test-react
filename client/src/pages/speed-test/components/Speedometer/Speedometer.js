@@ -1,15 +1,15 @@
-import React, { useRef  } from 'react'
+import React from 'react'
 import LinesSpeedometer from '../../../../components/view-components/LinesSpeedometer/LinesSpeedometer'
-import { useAppAttributes } from '../../../../contexts/appAttributes'
-import { useTestDetails } from '../../../../contexts/testDetails'
+import { useAppAttributes } from '../../../../contexts/appAttributesContext'
+import { useTestResult} from '../../../../contexts/testResultContext'
 import TestResults from '../TestResults/TestResults'
-import './speedometer.css'
+import { StyledSpeedometer } from './StyledSpeedometer'
 
 export default function Speedometer( ) {
 
-    const { downloadSpeed }  = useTestDetails()
+    const { testResult }     = useTestResult()
+    const { downloadSpeed }  = testResult
     const { loading, error } = useAppAttributes()
-    const speedometerRef     = useRef( null )
     const linesCount         = 49
     const maxSpeed           = 160
     const speedRatio         = ! error ? downloadSpeed / maxSpeed : 0
@@ -17,9 +17,9 @@ export default function Speedometer( ) {
     const markedCount        = speedRatio * linesCount 
 
     return (
-        <div className="speedometer">
+        <StyledSpeedometer>
 
-            <div className={ `inside-speedometer-bar ${ ! loading ? 'forwards-animation' : 'loading-animation' }` } data-testid='inside-speedometer-bar' ref={ speedometerRef } style={ { '--value' : speedPercentage, '--lines-count': linesCount, '--line-delay': 20 } }>
+            <div className={ `inside-speedometer-bar ${ ! loading ? 'forwards-animation' : 'loading-animation' }` } data-testid='inside-speedometer-bar' style={ { '--value' : speedPercentage, '--lines-count': linesCount, '--line-delay': 20 } }>
                 
                 <LinesSpeedometer key='outside-speedometer-bar' linesCount={ linesCount } markedCount={ markedCount }/>
                 <TestResults key='test-results'/>
@@ -28,6 +28,6 @@ export default function Speedometer( ) {
 
             <div className='speedometer-background'></div>
 
-        </div>
+        </StyledSpeedometer>
     )
 }
