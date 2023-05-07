@@ -31,6 +31,10 @@ const StyledUserDetails = styled.div`
         right: 1vw;
     }
 
+    & > .chat-container{
+        position: relative;
+    }
+
 `
 export default function UserDetails() {
 
