@@ -10,8 +10,11 @@ jest.mock( 'axios' )
 
 const MOCK_TEST_DETAILS = 
 { 
-    "downloadSpeed":50,"uploadSpeed":7.9,"downloaded":110,"uploaded":20,"latency":21,"bufferBloat":192,
-    "userLocation":"Jerusalem, IL","userIp":"2a00:a040:197:22aa:804e:c312:1c2e:3b9e","server":"LAPTOP-MJG5S0F3","os":"win32"
+    "downloadSpeed":50,"uploadSpeed":7.9,
+    "downloaded":110,"uploaded":20,
+    "latency":21,"bufferBloat":192,
+    "userLocation":"Jerusalem, IL","userIp":"2a00:a040:197:22aa:804e:c312:1c2e:3b9e",
+    "server":"LAPTOP-MJG5S0F3","os":"win32"
 }
 
 it( 'Disables the test button until the promise resolved', async () => {
