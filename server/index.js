@@ -5,7 +5,11 @@ const PORT = process.env.SERVER_PORT || 8000
 const { testSpeedHandler } = require( './api-handlers' )
 
 require('dotenv').config();
-app.use(cors())
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+}
+app.use(cors(corsOptions));
 
 app.get("/", async ( req, res ) => { 
 
@@ -16,5 +20,5 @@ app.get("/", async ( req, res ) => {
 
 app.listen( PORT, () => {
 
-    console.log( `Listen on the port ${ PORT }` );
+    console.log( `Listening on port ${ PORT }` );
 });
