@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button } from '../../../components/view-components/Button'
-import { getData } from '../../../api.js'
-import { useTestDetails } from '../../../contexts/testDetails'
+import { getData } from '../../../utils/api.js'
+import { useTestResult } from '../../../contexts/testResultContext'
+import { useAppAttributes } from '../../../contexts/appAttributesContext'
 
 const StyledTestButton = styled( Button )`
 
@@ -37,33 +38,33 @@ const StyledTestButton = styled( Button )`
 
 `
 
-async function testSpeed( setTestDetails, setLoading, setError )
-{   
-    setError( false )
-    setLoading( true )
+export default function TestButton(  ) {
     
-    await getData( '' ).then( res => {
-
-        setTestDetails( res.data )        
-    }).catch( function( error ){
-
-        setError( true )
-    })  
-
-    setLoading( false )
-}
-
-export default function TestButton( { loading, setLoading, setError } ) {
-    
-    const { setTestDetails } = useTestDetails()
-
+    const { setTestResult }                 = useTestResult()
+    const { loading, setLoading, setError } = useAppAttributes()
     return (
 
-        <StyledTestButton size='sm' color='theme' circle={ true } data-testid='test-button' disabled={ loading } onClick={ () => { testSpeed( setTestDetails, setLoading, setError ) } }>
+        <StyledTestButton size='sm' color='theme' circle={ true } data-testid='test-button' disabled={ loading } onClick={ () => { testSpeed( setTestResult, setLoading, setError ) } }>
 
             <span className='test-button-icon material-icons'>replay</span>
 
         </StyledTestButton>
     )
+
+    async function testSpeed( setTestResult, setLoading, setError )
+    {   
+        setError( false )
+        setLoading( true )
+        
+        await getData( '' ).then( res => {
+
+            setTestResult( res.data )        
+        }).catch( function( error ){
+
+            setError( true )
+        })  
+
+        setLoading( false )
+    }
 }
 

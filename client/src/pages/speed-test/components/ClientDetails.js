@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useTestDetails } from '../../../contexts/testDetails'
+import { useTestResult } from '../../../contexts/testResultContext'
 import ClientDetail from './ClientDetail'
 import LiveChat from './LiveChat'
 
@@ -20,13 +20,13 @@ const clientDetailsObject = {
 
 export default function ClientDetails() {
 
-    const testDetails = useTestDetails()
+    const { testResult } = useTestResult()
     return (
         <StyledClientDetails>
 
             { Object.keys( clientDetailsObject ).map( ( detailKey  ) => {
                 
-                return <ClientDetail key={ detailKey } detailKey={ detailKey } icon={ clientDetailsObject[ detailKey ].icon } data={ testDetails[ detailKey ] } title={ clientDetailsObject[ detailKey ].title }/>
+                return <ClientDetail key={ detailKey } detailKey={ detailKey } icon={ clientDetailsObject[ detailKey ].icon } data={ testResult[ detailKey ] } title={ clientDetailsObject[ detailKey ].title }/>
 
             })}
 

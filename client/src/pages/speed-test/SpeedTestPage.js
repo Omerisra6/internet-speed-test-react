@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { TestDetailsProvider } from '../../contexts/testDetails'
+import { TestResultProvider } from '../../contexts/testResultContext'
 import ResultsCardsContainer from './components/ResultsCardsContainer'
 import ClientDetails from './components/ClientDetails'
 import SpeedDetails from './components/SpeedDetails/SpeedDetails'
@@ -42,7 +42,7 @@ export default function SpeedTestPage() {
 
             <StyledTestDetails>
 
-                <TestDetailsProvider>
+                <TestResultProvider>
 
                     <ClientDetails/>
 
@@ -50,7 +50,7 @@ export default function SpeedTestPage() {
 
                     <ResultsCardsContainer/>
                     
-                </TestDetailsProvider>
+                </TestResultProvider>
 
             </StyledTestDetails>`
 

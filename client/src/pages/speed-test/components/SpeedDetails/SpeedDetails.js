@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { AppAttributesProvider } from '../../../../contexts/appAttributes'
+import { AppAttributesProvider } from '../../../../contexts/appAttributesContext'
 import SpeedTestChart from '../SpeedTestChart'
 import TestButton from '../TestButton'
 import TestExtraDetails from '../TestExtraDetails'
@@ -16,23 +16,20 @@ const StyledSpeedDetails = styled.div`
     top: 53%;
     transform: translate( -50%, -50%);
 `
-export default function SpeedDetails() {
-
-    const [ loading, setLoading ] = useState( false )
-    const [ error, setError ]     = useState( false ) 
+export default function SpeedDetails() { 
 
     return (
         <StyledSpeedDetails>
 
-            <AppAttributesProvider value={ { loading, error } }>
+            <AppAttributesProvider>
 
                 <SpeedTestChart/>
 
+                <TestExtraDetails/> 
+
+                <TestButton/>
+
             </AppAttributesProvider>
-
-            <TestExtraDetails/>
-
-            <TestButton loading={ loading } setLoading={ setLoading } setError={ setError }/>
 
         </StyledSpeedDetails>
     )

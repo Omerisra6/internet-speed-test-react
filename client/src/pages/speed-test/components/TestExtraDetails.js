@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useTestDetails } from '../../../contexts/testDetails'
+import { useTestResult } from '../../../contexts/testResultContext'
 import TestExtraDetail from './TestExtraDetail'
 
 const StyledTestExtraDetails = styled.div`
@@ -21,7 +21,7 @@ const extraDetails = {
 
 export default function TestExtraDetails() {
 
-    const testDetails = useTestDetails()
+    const { testResult } = useTestResult()
 
     return (
 
@@ -30,7 +30,7 @@ export default function TestExtraDetails() {
             { Object.keys( extraDetails ).map( ( detailKey ) => {
 
                 const currentDetail = extraDetails[ detailKey ]
-                return <TestExtraDetail key={ detailKey } detailKey={ detailKey } name={ currentDetail.name } value={ testDetails[ detailKey ] }/>
+                return <TestExtraDetail key={ detailKey } detailKey={ detailKey } name={ currentDetail.name } value={ testResult[ detailKey ] }/>
             })}
 
         </StyledTestExtraDetails>

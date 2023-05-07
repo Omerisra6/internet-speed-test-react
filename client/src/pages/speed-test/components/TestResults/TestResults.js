@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useAppAttributes } from '../../../../contexts/appAttributes'
-import { useTestDetails } from '../../../../contexts/testDetails'
+import { useAppAttributes } from '../../../../contexts/appAttributesContext'
+import { useTestResult } from '../../../../contexts/testResultContext'
 
 const StyledTestResults = styled.div`
 
@@ -56,7 +56,8 @@ const StyledTestResults = styled.div`
 export default function TestResults() {
 
     const { loading, error } = useAppAttributes()
-    const { downloadSpeed, latency } = useTestDetails()
+    const { testResult }     = useTestResult()
+    const { downloadSpeed, latency } = testResult
     
     return (
         <StyledTestResults className='test-results'>
