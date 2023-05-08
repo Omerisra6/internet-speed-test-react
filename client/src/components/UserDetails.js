@@ -31,6 +31,12 @@ const StyledUserDetails = styled.div`
         right: 1vw;
     }
 
+    & > .chat-container > a{
+        height: 6vh;
+        display: flex;
+        align-items: center;
+    }
+
     & > .chat-container{
         position: relative;
     }
