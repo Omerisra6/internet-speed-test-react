@@ -3,7 +3,7 @@ var os = require('os');
 
 exports.testSpeedHandler = async() => {
 
-    const testCommandOutput = await getExecOutput( 'fast --upload --json' )
+    const testCommandOutput = await getExecOutput( 'npx fast --upload --json' )
 
     //Handle no internet error
     if ( testCommandOutput.data == '› Please check your internet connection\n\n\n' ) 
