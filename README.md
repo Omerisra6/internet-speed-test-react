@@ -1,9 +1,9 @@
 
 <h1 align="center">
   <br>
-  <a href="https://omerisra6-speed-test.onrender.com"><img src="https://cdn-icons-png.flaticon.com/512/10321/10321953.png" alt="Speed Test App" width="200"></a>
+  <img src="https://cdn-icons-png.flaticon.com/512/10321/10321953.png" alt="Speed Test App" width="200">
   <br>
-  <a href="https://omerisra6-speed-test.onrender.com">Speed Test App</a>
+  <h2 align="center">Speed Test App</h2>
   <br>
 </h1>
 
@@ -19,9 +19,9 @@
   Screenshots
   <br>
   <br>
-  <a href="https://omerisra6-speed-test.onrender.com"><img src="https://i.ibb.co/BsVkXMK/localhost-3000.png" alt="localhost-3000" border="0"></a>
+  <img src="https://i.ibb.co/BsVkXMK/localhost-3000.png" alt="localhost-3000" border="0">
   <br>
-  <a href="https://omerisra6-speed-test.onrender.com"><img src="https://i.postimg.cc/x1mTJ7ww/localhost-3000-1.png" alt="localhost-3000-1" border="0" height="400"></a>
+  <img src="https://i.postimg.cc/x1mTJ7ww/localhost-3000-1.png" alt="localhost-3000-1" border="0" height="400">
 </h2>
 
 
